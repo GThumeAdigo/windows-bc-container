@@ -15,9 +15,8 @@ services:
       DISK_SIZE: "64G"
       USERNAME: "admin"
       PASSWORD: "admin"
-      # HV: "Y"
       VMX: "Y"
-      ARGUMENTS: "-cpu host,-vmx"
+      ARGUMENTS: "-cpu Broadwell-noTSX-IBRS,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff"
     devices:
       - /dev/kvm
       - /dev/net/tun
@@ -38,7 +37,7 @@ services:
       - ./data-exchange:/data
       - ./startup-scripts:/oem
     privileged: true
-    restart: always
+    restart: unless-stopped
     stop_grace_period: 2m
 
 networks:
