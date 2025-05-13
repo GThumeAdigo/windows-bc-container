@@ -3,6 +3,10 @@ echo ========================================
 echo Setup for BC Container 
 echo ========================================
 
+echo Copying createbccontainer.ps1 to Desktop
+copy "C:\OEM\createcontainer.ps1" "%USERPROFILE%\Desktop\createcontainer.ps1"
+echo Successfully copied createcontainer.ps1 to Desktop
+
 echo Disabling Windows Defender...
 powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
 echo Successfully disabled Windows Defender
@@ -14,6 +18,10 @@ echo Successfully installed NuGet
 echo Installing BcContainerHelper
 powershell -Command "Install-Module -Name BcContainerHelper -Force"
 echo Successfully installed BcContainerHelper
+
+echo Enabling Hyper-V without restarting directly
+powershell -Command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart"
+echo Successfully enabled Hyper-V
 
 echo Installing Docker...
 powershell -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1' -o install-docker-ce.ps1"
