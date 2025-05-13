@@ -13,8 +13,8 @@ services:
       RAM_SIZE: "16G"
       CPU_CORES: "8"
       DISK_SIZE: "64G"
-      USERNAME: "admin"
-      PASSWORD: "admin"
+      USERNAME: "adigo"
+      PASSWORD: "adigo"
       VMX: "Y"
       ARGUMENTS: "-cpu Broadwell-noTSX-IBRS,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff"
     devices:
