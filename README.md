@@ -29,7 +29,7 @@ This project allows you to run a BC container in a Windows virtual machine insid
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/windows-bc-container.git
+   git clone https://github.com/GThumeAdigo/windows-bc-container.git
    cd windows-bc-container
    ```
 
@@ -46,6 +46,7 @@ This project allows you to run a BC container in a Windows virtual machine insid
    - *Useful for monitoring installation status*
    
    **Via RDP:**
+   - Use for example Remmina on Linux
    - Host: localhost or your server IP
    - Port: 3389
    - Username: adigo
