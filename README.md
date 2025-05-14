@@ -1,6 +1,6 @@
 # Windows Container for Docker
 
-A containerized Windows environment that runs on Linux using Docker, providing easy access to containerized BC development, Windows applications and services.
+A containerized Windows environment that runs on Linux using Docker, providing easy access to containerized Microsoft Dynamics 365 Business Central (BC) development, Windows applications and services.
 
 ## Overview
 
@@ -9,21 +9,21 @@ This project allows you to run a BC container in a Windows virtual machine insid
 ## Features
 
 - Windows running in a containerized environment
-- Script to create BC Container on Desktop
-- RDP access to the Windows desktop (port 3389)
+- Pre-configured setup for Business Central development
+- Easy access via RDP or web browser (noVNC)
 - Configurable hardware resources (RAM, CPU, disk)
 - Shared volumes for data exchange
-- Support for Business Central ports (7047-7049)
-- Custom startup scripts support (currently installing BC Container dependencies)
+- Automatic port forwarding for BC services (7047-7049)
+- Custom startup scripts support
 - Network bridge configuration for seamless integration
-- Installation working out of the Box with no changes to the docker-compose file
-- Takes about 30 minutes, depending on download speed
+- Installation working out of the Box with no configuration needed
+- Setup time: ~20 minutes (depending on download speed)
 
 ## Prerequisites
 
 - Linux host with Docker and Docker Compose installed
 - KVM virtualization support
-- At least 8GB RAM recommended
+- At least 8GB RAM recommended (16GB for optimal performance)
 
 ## Quick Start
 
@@ -43,24 +43,36 @@ This project allows you to run a BC container in a Windows virtual machine insid
    **Via Web Browser (noVNC):**
    - Open http://127.0.0.1:8006 in your browser
    - No additional software required
-   - *can be used while installation to check status*
+   - *Useful for monitoring installation status*
    
    **Via RDP:**
    - Host: localhost or your server IP
    - Port: 3389
    - Username: adigo
    - Password: adigo
-   - provides a smoother UX with copy/paste & screen resolution
+   - Provides better experience with copy/paste & screen resolution
 
 4. **Install the Business Central container:**
    - Once connected to Windows, execute the PowerShell script (`createcontainer.ps1`) located on the desktop
    - Wait for the BC container setup to complete
 
-5. **Use the BC Container in your Host PC**
-   - Now you should be able to access the Business Central Container on your Host machines browser or with the ip in your launch.json
-   - The ip set in the compose-file
-   - Default IP is "http://127.0.0.1/"
-   - Default credentials are adigo:adigo, can be changed in createcontainer.ps1 script
+5. **Access Business Central:**
+   - From your host PC's browser: http://127.0.0.1/BC/
+   - In VS Code: use this IP in your launch.json
+   - Default credentials: adigo/adigo (can be changed in createcontainer.ps1)
+   - The IP can be changed in the compose-file
+
+## Managing the Container
+**To stop the container:**
+```bash
+docker-compose stop
+```
+
+**To remove the container:**
+```bash
+docker-compose down
+```
+
 
 ## Configuration Options
 
@@ -77,7 +89,7 @@ Edit the `docker-compose.yml` file to customize your Windows environment:
 | USERNAME | Windows user | adigo |
 | PASSWORD | User password | adigo |
 
-[Official Readme for configuration examples](https://github.com/dockur/windows?tab=readme-ov-file)
+For more configuration options, see the [dockur/windows documentation.](https://github.com/dockur/windows)
 
 ## Volume Mounts
 
@@ -89,17 +101,18 @@ Edit the `docker-compose.yml` file to customize your Windows environment:
 
 The container uses a bridge network with a predefined subnet. You can access the Windows environment through mapped ports:
 
-- noVNC: 8006
-- RDP: 3389 (TCP/UDP)
-- Web for BC: 80, 443, 8080
-- Business Central Dev: 7047, 7048, 7049
+- **Web Access:** noVNC (8006)
+- **Remote Desltop:** RDP (3389 TCP/UDP)
+- **Business Central Web:** 80, 443, 8080
+- **Business Central Develpoment:** 7047, 7048, 7049
 
 ## Troubleshooting
 
-- Ensure KVM is available on your host
+- Ensure KVM is available on your host system
 - Check that you have sufficient RAM available
 - For performance issues, try adjusting the CPU/RAM parameters
 
 ## Acknowledgements
 
-This project uses the Windows container image from dockurr/windows.
+This project uses the [dockur/windows](https://github.com/dockur/windows) container image. 
+Visit their repository for additional configuration parameters and options that can be used in your docker-compose file.
