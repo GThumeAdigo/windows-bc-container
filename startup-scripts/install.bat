@@ -9,6 +9,7 @@ echo Successfully copied createcontainer.ps1 to Desktop
 
 echo Disabling Windows Defender...
 powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
+powershell -Command "Remove-WindowsFeature Windows-Defender"
 echo Successfully disabled Windows Defender
 
 echo Installing NuGet
