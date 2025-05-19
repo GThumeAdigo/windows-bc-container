@@ -20,6 +20,10 @@ echo Installing NuGet
 powershell -Command "Install-PackageProvider -Name NuGet -Force"
 echo Successfully installed NuGet
 
+echo Installing Git
+powershell -Command "winget install --id Git.Git -e --source winget"
+echo Successfully installed Git
+
 echo Installing BcContainerHelper
 powershell -Command "Install-Module -Name BcContainerHelper -Force"
 echo Successfully installed BcContainerHelper
