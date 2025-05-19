@@ -20,8 +20,9 @@ echo Installing NuGet
 powershell -Command "Install-PackageProvider -Name NuGet -Force"
 echo Successfully installed NuGet
 
-echo Installing Git
+echo Installing Git & Github
 powershell -Command "winget install --id Git.Git -e --source winget"
+powershell -Command "winget install --id GitHub.cli"
 echo Successfully installed Git
 
 echo Installing VS Code
