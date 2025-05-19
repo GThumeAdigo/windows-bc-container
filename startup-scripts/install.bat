@@ -24,6 +24,10 @@ echo Installing Git
 powershell -Command "winget install --id Git.Git -e --source winget"
 echo Successfully installed Git
 
+echo Installing VS Code
+powershell -Command "winget install vscode"
+echo Successfully installed VS Code
+
 echo Installing BcContainerHelper
 powershell -Command "Install-Module -Name BcContainerHelper -Force"
 echo Successfully installed BcContainerHelper
