@@ -7,6 +7,10 @@ echo Copying createbccontainer.ps1 to Desktop
 copy "C:\OEM\createcontainer.ps1" "%USERPROFILE%\Desktop\createcontainer.ps1"
 echo Successfully copied createcontainer.ps1 to Desktop
 
+echo Disabling Ctrl+Alt+Del for login...
+powershell -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "DisableCAD" -Value 1"
+echo Successfully disabled Ctrl+Alt+Del
+
 echo Disabling Windows Defender...
 powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
 echo Successfully disabled Windows Defender
