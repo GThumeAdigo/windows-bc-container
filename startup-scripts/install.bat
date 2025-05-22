@@ -26,7 +26,7 @@ powershell -Command "Install-PackageProvider -Name NuGet -Force"
 echo Successfully installed NuGet
 
 echo Installing Git and Github
-powershell -Command "winget install --id Git.Git -e --source winget"
+powershell -Command "winget install --id Git.Git -h -e --source winget"
 powershell -Command "winget install --id GitHub.cli -h"
 echo Successfully installed Git and GitHub CLI
 
