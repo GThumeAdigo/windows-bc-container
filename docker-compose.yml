@@ -16,7 +16,7 @@ services:
       USERNAME: "adigo"
       PASSWORD: "adigo"
       VMX: "Y"
-      ARGUMENTS: "-cpu host,hypervisor=off,vmx=on,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vendor-id=whatever,+invtsc,+pdpe1gb"
+      ARGUMENTS: "-cpu host,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vendor-id=whatever,+invtsc,+pdpe1gb"
     devices:
       - /dev/kvm
       - /dev/net/tun
