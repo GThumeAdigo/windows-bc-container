@@ -11,7 +11,7 @@ services:
       REGION: "de-DE"
       KEYBOARD: "de-DE"
       RAM_SIZE: "16G"
-      CPU_CORES: "8"
+      CPU_CORES: "12"
       DISK_SIZE: "64G"
       USERNAME: "adigo"
       PASSWORD: "adigo"
