@@ -7,6 +7,11 @@ echo Copying createbccontainer.ps1 to Desktop
 copy "C:\OEM\createcontainer.ps1" "%USERPROFILE%\Desktop\createcontainer.ps1"
 echo Successfully copied createcontainer.ps1 to Desktop
 
+echo Copying init-code-tunnel.bat to startup folder
+set startupFolder=%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+copy "C:\OEM\init-code-tunnel.bat" "%startupFolder%\init-code-tunnel.bat"
+echo Successfully copied init-code-tunnel.bat to startup folder
+
 echo Disabling Ctrl+Alt+Del for login...
 powershell -Command "Set-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "DisableCAD" -Value 1"
 echo Successfully disabled Ctrl+Alt+Del
