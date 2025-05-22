@@ -27,7 +27,7 @@ echo Successfully installed NuGet
 
 echo Installing Git and Github
 powershell -Command "winget install --id Git.Git -e --source winget"
-powershell -Command "winget install --id GitHub.cli"
+powershell -Command "winget install --id GitHub.cli -h"
 echo Successfully installed Git and GitHub CLI
 
 echo Installing VS Code
