@@ -16,7 +16,7 @@ services:
       USERNAME: "adigo"
       PASSWORD: "adigo"
       VMX: "Y"
-      ARGUMENTS: "-cpu host,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vendor-id=whatever,-tsc-deadline,-x2apic"
+      ARGUMENTS: "-cpu Skylake-Client,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vendor-id=whatever"
     devices:
       - /dev/kvm
       - /dev/net/tun
