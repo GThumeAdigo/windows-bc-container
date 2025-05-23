@@ -18,7 +18,7 @@ echo Successfully disabled Ctrl+Alt+Del
 
 echo Disabling Windows Defender...
 powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
-powershell -Command "Remove-WindowsFeature Windows-Defender"
+powershell -Command "Disable-WindowsOptionalFeature"
 echo Successfully disabled Windows Defender
 
 echo Installing NuGet
@@ -44,4 +44,4 @@ echo Successfully enabled Hyper-V
 
 echo Installing Docker...
 powershell -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1' -o install-docker-ce.ps1"
-powershell -Command ".\install-docker-ce.ps1"
+powershell -ExecutionPolicy Bypass -Command ".\install-docker-ce.ps1"
