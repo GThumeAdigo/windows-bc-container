@@ -84,8 +84,8 @@ Edit the `docker-compose.yml` file to customize your Windows environment:
 | VERSION | Windows version | 25 |
 | REGION | System locale | de-DE |
 | KEYBOARD | Keyboard layout | de-DE |
-| RAM_SIZE | Memory allocation | 16G |
-| CPU_CORES | CPU cores | 8 |
+| RAM_SIZE | Memory allocation | 24G |
+| CPU_CORES | CPU cores | 12 |
 | DISK_SIZE | Disk space | 64G |
 | USERNAME | Windows user | adigo |
 | PASSWORD | User password | adigo |
