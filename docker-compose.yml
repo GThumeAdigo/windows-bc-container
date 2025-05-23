@@ -10,7 +10,7 @@ services:
       # EDITION: "core"
       REGION: "de-DE"
       KEYBOARD: "de-DE"
-      RAM_SIZE: "16G"
+      RAM_SIZE: "24G"
       CPU_CORES: "12"
       DISK_SIZE: "64G"
       USERNAME: "adigo"
