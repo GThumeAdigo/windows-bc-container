@@ -10,13 +10,13 @@ services:
       # EDITION: "core"
       REGION: "de-DE"
       KEYBOARD: "de-DE"
-      RAM_SIZE: "16G"
-      CPU_CORES: "8"
+      RAM_SIZE: "24G"
+      CPU_CORES: "12"
       DISK_SIZE: "64G"
       USERNAME: "adigo"
       PASSWORD: "adigo"
       VMX: "Y"
-      ARGUMENTS: "-cpu Broadwell-noTSX-IBRS,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff"
+      ARGUMENTS: "-cpu Skylake-Client,hypervisor=off,vmx=on,mpx=off,hv-time=on,hv-relaxed=on,hv-vapic=on,hv-spinlocks=0x1fff,hv-vendor-id=whatever"
     devices:
       - /dev/kvm
       - /dev/net/tun
