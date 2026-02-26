@@ -7,12 +7,11 @@ services:
         ipv4_address: 172.20.0.100
     environment:
       VERSION: "25"
-      # EDITION: "core"
       REGION: "de-DE"
       KEYBOARD: "de-DE"
       RAM_SIZE: "24G"
       CPU_CORES: "12"
-      DISK_SIZE: "64G"
+      DISK_SIZE: "120G"
       USERNAME: "adigo"
       PASSWORD: "adigo"
       VMX: "Y"
