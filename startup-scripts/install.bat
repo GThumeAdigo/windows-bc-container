@@ -45,3 +45,37 @@ echo Successfully enabled Hyper-V
 echo Installing Docker...
 powershell -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1' -o install-docker-ce.ps1"
 powershell -ExecutionPolicy Bypass -Command ".\install-docker-ce.ps1"
+
+
+
+
+
+
+@REM @echo off
+@REM echo ========================================
+@REM echo Setup for BC Container 
+@REM echo ========================================
+
+@REM echo Copying createbccontainer.ps1 to Desktop
+@REM copy "C:\OEM\createcontainer.ps1" "%USERPROFILE%\Desktop\createcontainer.ps1"
+@REM echo Successfully copied createcontainer.ps1 to Desktop
+
+@REM echo Disabling Windows Defender...
+@REM powershell -Command "Set-MpPreference -DisableRealtimeMonitoring $true"
+@REM echo Successfully disabled Windows Defender
+
+@REM echo Installing NuGet
+@REM powershell -Command "Install-PackageProvider -Name NuGet -Force"
+@REM echo Successfully installed NuGet
+
+@REM echo Installing BcContainerHelper
+@REM powershell -Command "Install-Module -Name BcContainerHelper -Force"
+@REM echo Successfully installed BcContainerHelper
+
+@REM echo Enabling Hyper-V without restarting directly
+@REM powershell -Command "Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All -NoRestart"
+@REM echo Successfully enabled Hyper-V
+
+@REM echo Installing Docker...
+@REM powershell -Command "Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/microsoft/Windows-Containers/Main/helpful_tools/Install-DockerCE/install-docker-ce.ps1' -o install-docker-ce.ps1"
+@REM powershell -Command ".\install-docker-ce.ps1"
